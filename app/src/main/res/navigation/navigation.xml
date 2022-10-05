@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/heroListFragment">
+
+    <fragment
+        android:id="@+id/heroListFragment"
+        android:name="com.noox.marvelheroes.hero.ui.list.HeroListFragment"
+        android:label="HeroListFragment"
+        tools:layout="@layout/fragment_hero_list">
+        <action
+            android:id="@+id/action_heroListFragment_to_heroDetailFragment"
+            app:destination="@id/heroDetailFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/heroDetailFragment"
+        android:name="com.noox.marvelheroes.hero.ui.detail.HeroDetailFragment"
+        android:label="HeroDetailFragment"
+        tools:layout="@layout/fragment_hero_detail" />
+
+</navigation>
