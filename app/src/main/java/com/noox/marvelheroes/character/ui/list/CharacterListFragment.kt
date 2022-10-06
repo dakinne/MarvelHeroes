@@ -1,4 +1,4 @@
-package com.noox.marvelheroes.hero.ui.list
+package com.noox.marvelheroes.character.ui.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.noox.marvelheroes.R
 import com.noox.marvelheroes.databinding.FragmentHeroListBinding
 
-class HeroListFragment : Fragment() {
+class CharacterListFragment : Fragment() {
 
     private var _binding: FragmentHeroListBinding? = null
     private val binding get() = _binding!!

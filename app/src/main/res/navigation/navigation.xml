@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/heroListFragment"
-        android:name="com.noox.marvelheroes.hero.ui.list.HeroListFragment"
+        android:name="com.noox.marvelheroes.character.ui.list.CharacterListFragment"
         android:label="HeroListFragment"
         tools:layout="@layout/fragment_hero_list">
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/heroDetailFragment"
-        android:name="com.noox.marvelheroes.hero.ui.detail.HeroDetailFragment"
+        android:name="com.noox.marvelheroes.character.ui.detail.CharacterDetailFragment"
         android:label="HeroDetailFragment"
         tools:layout="@layout/fragment_hero_detail" />
 

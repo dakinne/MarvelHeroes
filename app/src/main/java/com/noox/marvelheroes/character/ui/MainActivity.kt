@@ -1,4 +1,4 @@
-package com.noox.marvelheroes.hero.ui
+package com.noox.marvelheroes.character.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import com.noox.marvelheroes.R
