@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.App.Subtitle1.Secondary.Regular" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="fontFamily">@font/space_grotesk_regular</item>
+    </style>
+
+</resources>

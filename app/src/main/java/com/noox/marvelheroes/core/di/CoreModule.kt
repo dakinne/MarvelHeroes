@@ -2,6 +2,7 @@ package com.noox.marvelheroes.core.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.noox.marvelheroes.BuildConfig
+import com.noox.marvelheroes.core.api.ApiKeyInterceptor
 import com.noox.marvelheroes.core.api.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -28,6 +29,8 @@ private fun okHttpClient(): OkHttpClient {
             HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
         )
     }
+
+    okHttpClientBuilder.addInterceptor(ApiKeyInterceptor())
 
     return okHttpClientBuilder.build()
 }

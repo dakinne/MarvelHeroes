@@ -19,6 +19,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField 'String', 'API_URL', '"https://gateway.marvel.com/v1/public/"'
+        buildConfigField 'String', 'PUBLIC_API_KEY', MARVEL_PUBLIC_API_KEY
+        buildConfigField 'String', 'PRIVATE_API_KEY', MARVEL_PRIVATE_API_KEY
     }
 
     buildTypes {
@@ -68,6 +70,9 @@ dependencies {
     // Koin
     implementation 'io.insert-koin:koin-android:3.2.0'
     implementation 'io.insert-koin:koin-android-compat:3.2.0'
+
+    // Coil
+    implementation "io.coil-kt:coil:2.2.2"
 
     // Mockk
     testImplementation 'io.mockk:mockk:1.13.2'
