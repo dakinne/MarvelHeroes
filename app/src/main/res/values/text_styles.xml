@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="TextAppearance.App.Headline6.Primary.Medium" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="fontFamily">@font/space_grotesk_medium</item>
+    </style>
+
+    <style name="TextAppearance.App.Subtitle1.Primary.Medium" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="fontFamily">@font/space_grotesk_medium</item>
+    </style>
+
     <style name="TextAppearance.App.Subtitle1.Secondary.Regular" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="android:textColor">?android:attr/textColorSecondary</item>
         <item name="fontFamily">@font/space_grotesk_regular</item>
+    </style>
+
+    <style name="TextAppearance.App.Subtitle2.Primary.Regular" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="fontFamily">@font/space_grotesk_regular</item>
+    </style>
+
+    <style name="TextAppearance.App.Subtitle2.Secondary.Medium" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="fontFamily">@font/space_grotesk_medium</item>
+    </style>
+
+    <style name="TextAppearance.App.Body1.Primary.Regular" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="fontFamily">@font/space_grotesk_regular</item>
+    </style>
+
+    <style name="TextAppearance.App.Caption.Secondary.Medium" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="fontFamily">@font/roboto_medium</item>
     </style>
 
 </resources>

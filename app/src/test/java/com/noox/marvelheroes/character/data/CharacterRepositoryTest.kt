@@ -29,7 +29,7 @@ internal class CharacterRepositoryTest {
     fun `Should return Success when request character is success` () = runTest {
 
         coEvery { dataSource.getCharacter(characterId) } answers { Result.success(characterWrapper) }
-        every { mapper.mapToModel(characterWrapper) } returns listOf(character)
+        every { mapper.mapToModel(characterWrapper) } returns character
 
         val expected = Result.success(character)
         val result = repository.getCharacter(characterId)

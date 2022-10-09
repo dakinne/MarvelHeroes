@@ -42,7 +42,7 @@ class ApiServiceTest {
             MockResponse().setResponseCode(200).setBody(body)
         )
 
-        val characterDataWrapper = apiService.getCharacters()
+        val characterDataWrapper = apiService.getCharacters(limit = 100, offset = 0)
 
         assertNotNull(characterDataWrapper)
     }

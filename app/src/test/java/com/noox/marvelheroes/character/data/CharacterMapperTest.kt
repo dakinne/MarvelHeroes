@@ -17,6 +17,6 @@ class CharacterMapperTest {
 
         val model = mapper.mapToModel(input)
 
-        assertEquals(expected, model.first())
+        assertEquals(expected, model)
     }
 }

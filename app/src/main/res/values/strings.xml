@@ -3,4 +3,8 @@
 
     <string name="try_again">Try again</string>
     <string name="something_went_wrong">Something went wrong</string>
+    <string name="comics">comics</string>
+    <string name="events">events</string>
+    <string name="series">series</string>
+    <string name="stories">stories</string>
 </resources>

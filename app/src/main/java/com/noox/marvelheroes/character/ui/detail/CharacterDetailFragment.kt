@@ -77,8 +77,7 @@ class CharacterDetailFragment : Fragment() {
 
     private fun showCharacterData(character: Character) {
         with(binding) {
-            val secureUrlImage = character.image.replace("http:", "https:")
-            image.load(secureUrlImage) {
+            image.load(character.image) {
                 crossfade(true)
                 placeholder(R.drawable.image_placeholder)
                 error(R.drawable.image_placeholder)

@@ -12,7 +12,10 @@ data class CharacterDataWrapper(
 
 @JsonClass(generateAdapter = true)
 data class CharacterDataContainer(
-    @Json(name = "results") val results: List<CharacterDTO> = emptyList()
+    @Json(name = "results") val results: List<CharacterDTO> = emptyList(),
+    @Json(name = "offset") val offset: Int? = null,
+    @Json(name = "limit") val limit: Int? = null,
+    @Json(name = "total") val total: Int? = null
 )
 
 @JsonClass(generateAdapter = true)

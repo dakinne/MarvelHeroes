@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp"
+    android:paddingBottom="8dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        tools:ignore="ContentDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        tools:text="Hulk (Ultimate)"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.App.Headline6.Primary.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/comics_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/comics"
+        android:textAppearance="@style/TextAppearance.App.Caption.Secondary.Medium"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintEnd_toStartOf="@+id/series_label"/>
+
+    <TextView
+        android:id="@+id/series_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/series"
+        android:textAppearance="@style/TextAppearance.App.Caption.Secondary.Medium"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintStart_toEndOf="@+id/comics_label"
+        app:layout_constraintEnd_toStartOf="@+id/stories_label"/>
+
+    <TextView
+        android:id="@+id/stories_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/stories"
+        android:textAppearance="@style/TextAppearance.App.Caption.Secondary.Medium"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintStart_toEndOf="@+id/series_label"
+        app:layout_constraintEnd_toStartOf="@+id/events_label"/>
+
+    <TextView
+        android:id="@+id/events_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/events"
+        android:textAppearance="@style/TextAppearance.App.Caption.Secondary.Medium"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintStart_toEndOf="@+id/stories_label"
+        app:layout_constraintEnd_toEndOf="@+id/name"/>
+
+    <TextView
+        android:id="@+id/comics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="7"
+        android:textAppearance="@style/TextAppearance.App.Subtitle2.Primary.Regular"
+        app:layout_constraintTop_toBottomOf="@+id/comics_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/comics_label"
+        app:layout_constraintEnd_toEndOf="@+id/comics_label"/>
+
+    <TextView
+        android:id="@+id/series"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="16"
+        android:textAppearance="@style/TextAppearance.App.Subtitle2.Primary.Regular"
+        app:layout_constraintTop_toBottomOf="@+id/series_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/series_label"
+        app:layout_constraintEnd_toEndOf="@+id/series_label"/>
+
+    <TextView
+        android:id="@+id/stories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="30"
+        android:textAppearance="@style/TextAppearance.App.Subtitle2.Primary.Regular"
+        app:layout_constraintTop_toBottomOf="@+id/stories_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/stories_label"
+        app:layout_constraintEnd_toEndOf="@+id/stories_label"/>
+
+    <TextView
+        android:id="@+id/events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="30"
+        android:textAppearance="@style/TextAppearance.App.Subtitle2.Primary.Regular"
+        app:layout_constraintTop_toBottomOf="@+id/events_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/events_label"
+        app:layout_constraintEnd_toEndOf="@+id/events_label"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
