@@ -23,16 +23,15 @@ class CharacterViewHolder(
 
     fun bind(character: Character) {
         with(binding) {
-            image.load(character.image) {
+            image.load(character.thumbnail.url) {
                 crossfade(true)
                 placeholder(R.drawable.image_placeholder)
                 error(R.drawable.image_placeholder)
             }
             name.text = character.name
-            comics.text = character.comics.toString()
-            events.text = character.events.toString()
-            series.text = character.series.toString()
-            stories.text = character.stories.toString()
+            comics.text = character.totalComics.toString()
+            events.text = character.totalEvents.toString()
+            series.text = character.totalSeries.toString()
         }
 
         itemView.setOnSafeClickListener { onItemClick(character) }

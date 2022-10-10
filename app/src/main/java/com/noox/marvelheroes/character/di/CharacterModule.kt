@@ -25,9 +25,14 @@ val characterModule = module {
         )
     }
 
-    single { GetCharacter(repository = get()) }
+    single { GetCharacter(
+        characterRepository = get(),
+        comicRepository = get(),
+        serieRepository = get(),
+        eventRepository = get())
+    }
     single { GetPageOfCharacters(repository = get()) }
-    single { CharacterMapper() }
+    single { CharacterMapper(imageMapper = get()) }
     single { CharacterRepository(dataSource = get(), mapper = get()) }
     single { CharacterDataSource(apiService = get())}
 }

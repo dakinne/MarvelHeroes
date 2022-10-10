@@ -4,6 +4,7 @@ import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterF
 import com.noox.marvelheroes.BuildConfig
 import com.noox.marvelheroes.core.api.ApiKeyInterceptor
 import com.noox.marvelheroes.core.api.ApiService
+import com.noox.marvelheroes.core.data.ImageMapper
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -16,6 +17,8 @@ const val CONNECTION_TIMEOUT = 10L
 val coreModule = module {
     single { okHttpClient() }
     single { apiService(okHttpClient = get()) }
+
+    single { ImageMapper() }
 }
 
 private fun okHttpClient(): OkHttpClient {

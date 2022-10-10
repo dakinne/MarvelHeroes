@@ -20,7 +20,6 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            app:title="@string/app_name"
             app:navigationIcon="@drawable/ic_arrow_back"/>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -29,6 +28,7 @@
         android:id="@+id/error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:constraint_referenced_ids="error_message,try_again_button"/>
 
     <TextView
@@ -87,6 +87,28 @@
                 tools:ignore="ContentDescription"
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"/>
+
+            <com.noox.marvelheroes.core.ui.component.ImagesCarousel
+                android:id="@+id/comics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="16dp"
+                app:title="@string/comics" />
+
+            <com.noox.marvelheroes.core.ui.component.ImagesCarousel
+                android:id="@+id/series"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                app:title="@string/series" />
+
+            <com.noox.marvelheroes.core.ui.component.ImagesCarousel
+                android:id="@+id/events"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                app:title="@string/events" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -3,8 +3,9 @@ package com.noox.marvelheroes.util
 import com.noox.marvelheroes.character.data.CharacterDTO
 import com.noox.marvelheroes.character.data.CharacterDataContainer
 import com.noox.marvelheroes.character.data.CharacterDataWrapper
-import com.noox.marvelheroes.character.data.Image
 import com.noox.marvelheroes.character.domain.model.Character
+import com.noox.marvelheroes.core.data.ImageDTO
+import com.noox.marvelheroes.core.domain.model.Image
 
 class Constants {
 
@@ -17,7 +18,7 @@ class Constants {
                     CharacterDTO(
                         id = 100,
                         name = "Black Panther",
-                        thumbnail = Image(
+                        thumbnail = ImageDTO(
                             path = "https//images.com/100",
                             extension = "jpg"
                         )
@@ -31,7 +32,11 @@ class Constants {
         Character(
             id = 100,
             name = "Black Panther",
-            image = "https//images.com/100.jpg"
+            image = Image("https//images.com/100.jpg"),
+            thumbnail = Image("https//images.com/100.jpg"),
+            totalComics = 0,
+            totalEvents = 0,
+            totalSeries = 0
         )
     }
 }

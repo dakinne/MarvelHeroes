@@ -1,11 +1,17 @@
 package com.noox.marvelheroes.character.data
 
 import com.noox.marvelheroes.character.domain.model.Character
+import com.noox.marvelheroes.core.data.ImageMapper
 import com.noox.marvelheroes.core.data.Page
 import com.noox.marvelheroes.core.exception.BadDataException
 import kotlin.math.roundToInt
 
-class CharacterMapper {
+private const val IMAGE_VARIANT_NAME = "standard_fantastic"
+private const val THUMBNAIL_VARIANT_NAME = "standard_medium"
+
+class CharacterMapper(
+    private val imageMapper: ImageMapper
+) {
 
     fun mapToPage(dto: CharacterDataWrapper): Page<Character> {
         val data = dto.data ?: throw BadDataException()
@@ -32,15 +38,11 @@ class CharacterMapper {
         return Character(
             id = dto.id!!,
             name = dto.name!!,
-            image = mapToModel(dto.thumbnail!!),
-            comics = dto.comics?.available ?: 0,
-            events = dto.events?.available ?: 0,
-            series = dto.series?.available ?: 0,
-            stories = dto.stories?.available ?: 0
+            image = imageMapper.mapToModel(dto.thumbnail!!, IMAGE_VARIANT_NAME),
+            thumbnail = imageMapper.mapToModel(dto.thumbnail, THUMBNAIL_VARIANT_NAME),
+            totalComics = dto.comics?.available ?: 0,
+            totalEvents = dto.events?.available ?: 0,
+            totalSeries = dto.series?.available ?: 0
         )
-    }
-
-    private fun mapToModel(dto: Image): String {
-        return "${dto.path!!}.${dto.extension!!}".replace("http:", "https:")
     }
 }

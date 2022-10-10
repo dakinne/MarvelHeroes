@@ -1,12 +1,13 @@
 package com.noox.marvelheroes.character.data
 
+import com.noox.marvelheroes.core.data.ImageMapper
 import com.noox.marvelheroes.util.Constants
 import org.junit.Test
 import org.junit.Assert.assertEquals
 
 class CharacterMapperTest {
 
-    private val mapper = CharacterMapper()
+    private val mapper = CharacterMapper(ImageMapper())
 
     private val constants by lazy { Constants() }
 

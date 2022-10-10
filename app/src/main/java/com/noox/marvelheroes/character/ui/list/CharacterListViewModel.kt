@@ -50,7 +50,7 @@ class CharacterListViewModel(
                     _uiState.value = UiState.Success(characters.toList(), pageOfCharacters.hasMorePages)
                     nextPage = pageOfCharacters.currentPage + 1
                 },
-                onFailure = { _uiState.value = UiState.Error } // TODO: Improve error handler
+                onFailure = { _uiState.value = UiState.Error }
             )
         }
     }

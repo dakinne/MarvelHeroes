@@ -77,12 +77,21 @@ class CharacterDetailFragment : Fragment() {
 
     private fun showCharacterData(character: Character) {
         with(binding) {
-            image.load(character.image) {
+            image.load(character.image.url) {
                 crossfade(true)
                 placeholder(R.drawable.image_placeholder)
                 error(R.drawable.image_placeholder)
             }
             toolbar.title = character.name
+
+            comics.isVisible = character.comics.isNotEmpty()
+            comics.images = character.comics.map { it.image }
+
+            series.isVisible = character.series.isNotEmpty()
+            series.images = character.series.map { it.image }
+
+            events.isVisible = character.events.isNotEmpty()
+            events.images = character.events.map { it.image }
         }
     }
 

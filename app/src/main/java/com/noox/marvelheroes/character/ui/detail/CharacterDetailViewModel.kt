@@ -28,9 +28,10 @@ class CharacterDetailViewModel(
 
     fun loadCharacter() {
         viewModelScope.launch {
+            _uiState.emit(UiState.Loading)
             getCharacter(characterId).fold(
                 onSuccess = { _uiState.emit(UiState.Success(it)) },
-                onFailure = { _uiState.emit(UiState.Error) } // TODO: Improve error handler
+                onFailure = { _uiState.emit(UiState.Error) }
             )
         }
     }

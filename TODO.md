@@ -1,8 +1,13 @@
 # List
-Check if the list is empty
 Add Finder
-Save state in ViewModel
+Check if the list is empty
+Save state in ViewModel (SavedStateHandle)
 
 # Detail
-FIX Coil issue. When image is loaded first time, this is not rescaled as expected.
-Add comics, series, stories and events.
+
+# Layout
+Improve detail and list. Include common sections like toolbar, error, loading
+
+# Test
+Add test
+
