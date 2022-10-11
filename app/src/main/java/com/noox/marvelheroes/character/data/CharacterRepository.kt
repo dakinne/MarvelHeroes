@@ -13,7 +13,6 @@ class CharacterRepository(
     }
 
     suspend fun getCharacter(id: Int): Result<Character> {
-        // TODO: What happend if mapper throws an exception
         return dataSource.getCharacter(id).mapCatching { mapper.mapToModel(it) }
     }
 }

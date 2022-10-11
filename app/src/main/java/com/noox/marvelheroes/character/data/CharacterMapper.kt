@@ -15,7 +15,6 @@ class CharacterMapper(
 
     fun mapToPage(dto: CharacterDataWrapper): Page<Character> {
         val data = dto.data ?: throw BadDataException()
-        // TODO: Test if limit, offset or/and total are nulls
         val limit = data.limit ?: throw BadDataException()
         val offset = data.offset ?: throw BadDataException()
         val total = data.total ?: throw BadDataException()

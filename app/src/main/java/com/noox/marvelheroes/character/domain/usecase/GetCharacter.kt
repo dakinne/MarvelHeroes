@@ -56,7 +56,7 @@ class GetCharacter(
     }
 
     private suspend fun getEvents(character: Character): List<Event> {
-        if (!character.hasComics) {
+        if (!character.hasEvents) {
             return emptyList()
         }
 

@@ -5,4 +5,4 @@ import com.noox.marvelheroes.core.domain.model.Image
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class Serie(val image: Image): Parcelable
+data class Serie(val image: Image): Parcelable
