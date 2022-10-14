@@ -1,5 +1,8 @@
 package com.noox.marvelheroes.character.data
 
+import com.noox.marvelheroes.character.data.api.CharacterDTO
+import com.noox.marvelheroes.character.data.api.CharacterDataWrapper
+import com.noox.marvelheroes.character.data.cache.CharacterEntity
 import com.noox.marvelheroes.character.domain.model.Character
 import com.noox.marvelheroes.core.data.ImageMapper
 import com.noox.marvelheroes.core.data.Page
@@ -44,4 +47,24 @@ class CharacterMapper(
             totalSeries = dto.series?.available ?: 0
         )
     }
+
+    fun mapToModel(entity: CharacterEntity) = Character(
+        id = entity.id,
+        name = entity.name,
+        image = imageMapper.mapToModel(entity.imageUrl),
+        thumbnail = imageMapper.mapToModel(entity.thumbnailUrl),
+        totalComics = entity.totalComics,
+        totalEvents = entity.totalEvents,
+        totalSeries = entity.totalSeries
+    )
+
+    fun mapToEntity(character: Character) = CharacterEntity(
+        id = character.id,
+        name = character.name,
+        imageUrl = character.image.url,
+        thumbnailUrl = character.thumbnail.url,
+        totalComics = character.totalComics,
+        totalEvents = character.totalEvents,
+        totalSeries = character.totalSeries
+    )
 }

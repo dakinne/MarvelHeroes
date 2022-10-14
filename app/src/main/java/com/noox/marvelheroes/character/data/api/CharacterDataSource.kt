@@ -1,4 +1,4 @@
-package com.noox.marvelheroes.character.data
+package com.noox.marvelheroes.character.data.api
 
 import com.noox.marvelheroes.core.api.ApiService
 import com.noox.marvelheroes.core.api.safeApiCall

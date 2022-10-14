@@ -1,9 +1,9 @@
 package com.noox.marvelheroes.core.api
 
-import com.noox.marvelheroes.character.data.CharacterDataWrapper
-import com.noox.marvelheroes.comic.data.ComicDataWrapper
-import com.noox.marvelheroes.event.data.EventDataWrapper
-import com.noox.marvelheroes.serie.data.SerieDataWrapper
+import com.noox.marvelheroes.character.data.api.CharacterDataWrapper
+import com.noox.marvelheroes.comic.data.api.ComicDataWrapper
+import com.noox.marvelheroes.event.data.api.EventDataWrapper
+import com.noox.marvelheroes.serie.data.api.SerieDataWrapper
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

@@ -8,6 +8,3 @@ Save state in ViewModel (SavedStateHandle)
 # Layout
 Improve detail and list. Include common sections like toolbar, error, loading
 
-# Test
-Add test
-

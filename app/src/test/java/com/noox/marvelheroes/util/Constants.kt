@@ -1,23 +1,27 @@
 package com.noox.marvelheroes.util
 
-import com.noox.marvelheroes.character.data.CharacterDTO
-import com.noox.marvelheroes.character.data.CharacterDataContainer
-import com.noox.marvelheroes.character.data.CharacterDataWrapper
+import com.noox.marvelheroes.character.data.api.CharacterDTO
+import com.noox.marvelheroes.character.data.api.CharacterDataContainer
+import com.noox.marvelheroes.character.data.api.CharacterDataWrapper
+import com.noox.marvelheroes.character.data.cache.CharacterEntity
 import com.noox.marvelheroes.character.domain.model.Character
-import com.noox.marvelheroes.comic.data.ComicDTO
-import com.noox.marvelheroes.comic.data.ComicDataContainer
-import com.noox.marvelheroes.comic.data.ComicDataWrapper
+import com.noox.marvelheroes.comic.data.api.ComicDTO
+import com.noox.marvelheroes.comic.data.api.ComicDataContainer
+import com.noox.marvelheroes.comic.data.api.ComicDataWrapper
+import com.noox.marvelheroes.comic.data.cache.ComicEntity
 import com.noox.marvelheroes.comic.domain.model.Comic
 import com.noox.marvelheroes.core.data.ImageDTO
 import com.noox.marvelheroes.core.data.Page
 import com.noox.marvelheroes.core.domain.model.Image
-import com.noox.marvelheroes.event.data.EventDTO
-import com.noox.marvelheroes.event.data.EventDataContainer
-import com.noox.marvelheroes.event.data.EventDataWrapper
+import com.noox.marvelheroes.event.data.api.EventDTO
+import com.noox.marvelheroes.event.data.api.EventDataContainer
+import com.noox.marvelheroes.event.data.api.EventDataWrapper
+import com.noox.marvelheroes.event.data.cache.EventEntity
 import com.noox.marvelheroes.event.domain.model.Event
-import com.noox.marvelheroes.serie.data.SerieDTO
-import com.noox.marvelheroes.serie.data.SerieDataContainer
-import com.noox.marvelheroes.serie.data.SerieDataWrapper
+import com.noox.marvelheroes.serie.data.api.SerieDTO
+import com.noox.marvelheroes.serie.data.api.SerieDataContainer
+import com.noox.marvelheroes.serie.data.api.SerieDataWrapper
+import com.noox.marvelheroes.serie.data.cache.SerieEntity
 import com.noox.marvelheroes.serie.domain.model.Serie
 
 class Constants {
@@ -53,6 +57,18 @@ class Constants {
         )
     }
 
+    val characterEntity by lazy {
+        CharacterEntity(
+            id = 100,
+            name = "Black Panther",
+            imageUrl = "https//images.com/100/standard_fantastic.jpg",
+            thumbnailUrl = "https//images.com/100/standard_medium.jpg",
+            totalComics = 0,
+            totalEvents = 0,
+            totalSeries = 0
+        )
+    }
+
     val serieDataWrapper by lazy {
         SerieDataWrapper(
             code = 200,
@@ -75,6 +91,13 @@ class Constants {
     val serie by lazy {
         Serie(
             image = Image("https//images.com/100/portrait_fantastic.jpg"),
+        )
+    }
+
+    val serieEntity by lazy {
+        SerieEntity(
+            characterId = character.id,
+            imageUrl = "https//images.com/100/portrait_fantastic.jpg",
         )
     }
 
@@ -103,6 +126,13 @@ class Constants {
         )
     }
 
+    val eventEntity by lazy {
+        EventEntity(
+            characterId = character.id,
+            imageUrl = "https//images.com/100/portrait_fantastic.jpg",
+        )
+    }
+
     val comicDataWrapper by lazy {
         ComicDataWrapper(
             code = 200,
@@ -125,6 +155,13 @@ class Constants {
     val comic by lazy {
         Comic(
             image = Image("https//images.com/100/portrait_fantastic.jpg"),
+        )
+    }
+
+    val comicEntity by lazy {
+        ComicEntity(
+            characterId = character.id,
+            imageUrl = "https//images.com/100/portrait_fantastic.jpg",
         )
     }
 

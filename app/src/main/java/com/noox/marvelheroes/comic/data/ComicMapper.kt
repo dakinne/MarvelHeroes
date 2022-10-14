@@ -1,7 +1,11 @@
 package com.noox.marvelheroes.comic.data
 
+import com.noox.marvelheroes.comic.data.api.ComicDTO
+import com.noox.marvelheroes.comic.data.api.ComicDataWrapper
+import com.noox.marvelheroes.comic.data.cache.ComicEntity
 import com.noox.marvelheroes.comic.domain.model.Comic
 import com.noox.marvelheroes.core.data.ImageMapper
+import com.noox.marvelheroes.core.domain.model.Image
 import com.noox.marvelheroes.core.exception.BadDataException
 
 private const val IMAGE_VARIANT_NAME = "portrait_fantastic"
@@ -17,5 +21,14 @@ class ComicMapper(
 
     private fun mapToModel(dto: ComicDTO) = Comic(
         image = imageMapper.mapToModel(dto.thumbnail!!, IMAGE_VARIANT_NAME)
+    )
+
+    fun mapToModel(entity: ComicEntity) = Comic(
+        image = Image(entity.imageUrl)
+    )
+
+    fun mapToEntity(characterId: Int, comic: Comic) = ComicEntity(
+        characterId = characterId,
+        imageUrl = comic.image.url
     )
 }

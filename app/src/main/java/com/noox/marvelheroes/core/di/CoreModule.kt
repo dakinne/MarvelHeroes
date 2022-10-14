@@ -1,10 +1,13 @@
 package com.noox.marvelheroes.core.di
 
+import android.app.Application
+import androidx.room.Room
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.noox.marvelheroes.BuildConfig
 import com.noox.marvelheroes.core.api.ApiKeyInterceptor
 import com.noox.marvelheroes.core.api.ApiService
 import com.noox.marvelheroes.core.data.ImageMapper
+import com.noox.marvelheroes.core.db.HeroesDatabase
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -19,6 +22,7 @@ val coreModule = module {
     single { apiService(okHttpClient = get()) }
 
     single { ImageMapper() }
+    single { database(get()) }
 }
 
 private fun okHttpClient(): OkHttpClient {
@@ -47,3 +51,6 @@ private fun apiService(
     .client(okHttpClient)
     .build()
     .create(ApiService::class.java)
+
+private fun database(app: Application): HeroesDatabase =
+    Room.databaseBuilder(app, HeroesDatabase::class.java, "heroes_database").build()

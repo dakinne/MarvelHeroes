@@ -1,4 +1,4 @@
-package com.noox.marvelheroes.character.data
+package com.noox.marvelheroes.character.data.api
 
 import com.noox.marvelheroes.core.data.ImageDTO
 import com.squareup.moshi.Json

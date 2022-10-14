@@ -74,6 +74,11 @@ dependencies {
     // Coil
     implementation 'io.coil-kt:coil:2.2.2'
 
+    // Room
+    implementation 'androidx.room:room-runtime:2.5.0-beta01'
+    kapt 'androidx.room:room-compiler:2.5.0-beta01'
+    implementation 'androidx.room:room-ktx:2.5.0-beta01'
+
     // Mockk
     testImplementation 'io.mockk:mockk:1.13.2'
 

@@ -1,4 +1,4 @@
-package com.noox.marvelheroes.event.data
+package com.noox.marvelheroes.event.data.api
 
 import com.noox.marvelheroes.core.api.ApiService
 import com.noox.marvelheroes.core.api.safeApiCall

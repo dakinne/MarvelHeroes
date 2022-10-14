@@ -1,4 +1,4 @@
-package com.noox.marvelheroes.event.data
+package com.noox.marvelheroes.event.data.api
 
 import com.noox.marvelheroes.core.data.ImageDTO
 import com.squareup.moshi.Json

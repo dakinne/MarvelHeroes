@@ -1,6 +1,8 @@
 package com.noox.marvelheroes.comic.data
 
 import android.util.Log
+import com.noox.marvelheroes.comic.data.api.ComicDataSource
+import com.noox.marvelheroes.comic.data.api.ComicDataWrapper
 import com.noox.marvelheroes.core.api.ApiService
 import com.noox.marvelheroes.core.exception.UnexpectedException
 import io.mockk.coEvery

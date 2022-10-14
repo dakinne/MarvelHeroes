@@ -3,6 +3,8 @@ package com.noox.marvelheroes.serie.data
 import android.util.Log
 import com.noox.marvelheroes.core.api.ApiService
 import com.noox.marvelheroes.core.exception.UnexpectedException
+import com.noox.marvelheroes.serie.data.api.SerieDataSource
+import com.noox.marvelheroes.serie.data.api.SerieDataWrapper
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

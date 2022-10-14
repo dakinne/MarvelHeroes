@@ -3,6 +3,8 @@ package com.noox.marvelheroes.event.data
 import android.util.Log
 import com.noox.marvelheroes.core.api.ApiService
 import com.noox.marvelheroes.core.exception.UnexpectedException
+import com.noox.marvelheroes.event.data.api.EventDataSource
+import com.noox.marvelheroes.event.data.api.EventDataWrapper
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
