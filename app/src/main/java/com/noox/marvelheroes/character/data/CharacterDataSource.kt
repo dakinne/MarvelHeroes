@@ -3,8 +3,9 @@ package com.noox.marvelheroes.character.data
 import com.noox.marvelheroes.core.api.ApiService
 import com.noox.marvelheroes.core.api.safeApiCall
 import com.noox.marvelheroes.core.data.PAGE_LIMIT
+import javax.inject.Inject
 
-class CharacterDataSource(
+class CharacterDataSource @Inject constructor(
     private val apiService: ApiService
 ) {
 

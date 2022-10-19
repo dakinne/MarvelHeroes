@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -19,15 +20,16 @@ import com.noox.marvelheroes.core.extensions.dpToPx
 import com.noox.marvelheroes.core.extensions.setOnSafeClickListener
 import com.noox.marvelheroes.core.ui.DividerItemDecoration
 import com.noox.marvelheroes.databinding.FragmentHeroListBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
+@AndroidEntryPoint
 class CharacterListFragment : Fragment() {
 
     private var _binding: FragmentHeroListBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel by viewModel<CharacterListViewModel>()
+    private val viewModel: CharacterListViewModel by viewModels()
 
     private val adapter by lazy {
         CharacterAdapter(

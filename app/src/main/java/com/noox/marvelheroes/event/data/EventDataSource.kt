@@ -2,8 +2,9 @@ package com.noox.marvelheroes.event.data
 
 import com.noox.marvelheroes.core.api.ApiService
 import com.noox.marvelheroes.core.api.safeApiCall
+import javax.inject.Inject
 
-class EventDataSource(
+class EventDataSource @Inject constructor(
     private val apiService: ApiService
 ) {
 

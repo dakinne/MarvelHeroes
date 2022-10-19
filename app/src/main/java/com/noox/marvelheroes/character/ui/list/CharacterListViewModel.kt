@@ -4,12 +4,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.noox.marvelheroes.character.domain.model.Character
 import com.noox.marvelheroes.character.domain.usecase.GetPageOfCharacters
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CharacterListViewModel(
+@HiltViewModel
+class CharacterListViewModel @Inject constructor(
     private val getPageOfCharacters: GetPageOfCharacters
 ) : ViewModel() {
 

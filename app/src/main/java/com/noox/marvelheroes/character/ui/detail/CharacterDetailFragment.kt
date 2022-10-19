@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -17,27 +18,22 @@ import com.noox.marvelheroes.character.domain.model.Character
 import com.noox.marvelheroes.character.ui.detail.CharacterDetailViewModel.UiState
 import com.noox.marvelheroes.core.extensions.setOnSafeClickListener
 import com.noox.marvelheroes.databinding.FragmentHeroDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.parameter.parametersOf
 
+const val ARG_CHARACTER_ID = "characterId"
+
+@AndroidEntryPoint
 class CharacterDetailFragment : Fragment() {
 
     companion object {
-        private const val ARG_CHARACTER_ID = "characterId"
-
         fun bundle(characterId: Int) = bundleOf(ARG_CHARACTER_ID to characterId)
-    }
-
-    private val characterId: Int by lazy {
-        requireArguments().getInt(ARG_CHARACTER_ID)
     }
 
     private var _binding: FragmentHeroDetailBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel by viewModel<CharacterDetailViewModel> { parametersOf(characterId) }
-
+   private val viewModel: CharacterDetailViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

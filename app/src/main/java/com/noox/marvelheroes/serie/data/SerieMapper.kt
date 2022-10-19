@@ -3,10 +3,11 @@ package com.noox.marvelheroes.serie.data
 import com.noox.marvelheroes.core.data.ImageMapper
 import com.noox.marvelheroes.core.exception.BadDataException
 import com.noox.marvelheroes.serie.domain.model.Serie
+import javax.inject.Inject
 
 private const val IMAGE_VARIANT_NAME = "portrait_fantastic"
 
-class SerieMapper(
+class SerieMapper @Inject constructor(
     private val imageMapper: ImageMapper
 ) {
 

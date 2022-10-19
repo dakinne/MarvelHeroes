@@ -2,8 +2,9 @@ package com.noox.marvelheroes.serie.data
 
 import com.noox.marvelheroes.core.api.ApiService
 import com.noox.marvelheroes.core.api.safeApiCall
+import javax.inject.Inject
 
-class SerieDataSource(
+class SerieDataSource @Inject constructor(
     private val apiService: ApiService
 ) {
 

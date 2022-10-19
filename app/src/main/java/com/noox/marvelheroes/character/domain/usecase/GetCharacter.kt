@@ -5,13 +5,15 @@ import com.noox.marvelheroes.character.domain.model.Character
 import com.noox.marvelheroes.comic.data.ComicRepository
 import com.noox.marvelheroes.serie.data.SerieRepository
 import com.noox.marvelheroes.comic.domain.model.Comic
+import com.noox.marvelheroes.core.di.IoDispatcher
 import com.noox.marvelheroes.event.data.EventRepository
 import com.noox.marvelheroes.event.domain.model.Event
 import com.noox.marvelheroes.serie.domain.model.Serie
 import kotlinx.coroutines.*
+import javax.inject.Inject
 
-class GetCharacter(
-    private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
+class GetCharacter @Inject constructor(
+    @IoDispatcher private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
     private val characterRepository: CharacterRepository,
     private val comicRepository: ComicRepository,
     private val serieRepository: SerieRepository,

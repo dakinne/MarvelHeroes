@@ -1,8 +1,9 @@
 package com.noox.marvelheroes.event.data
 
 import com.noox.marvelheroes.event.domain.model.Event
+import javax.inject.Inject
 
-class EventRepository(
+class EventRepository @Inject constructor(
     private val dataSource: EventDataSource,
     private val mapper: EventMapper
 ) {

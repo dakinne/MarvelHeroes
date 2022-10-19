@@ -1,8 +1,9 @@
 package com.noox.marvelheroes.comic.data
 
 import com.noox.marvelheroes.comic.domain.model.Comic
+import javax.inject.Inject
 
-class ComicRepository(
+class ComicRepository @Inject constructor(
     private val dataSource: ComicDataSource,
     private val mapper: ComicMapper
 ) {

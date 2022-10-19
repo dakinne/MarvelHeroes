@@ -2,8 +2,9 @@ package com.noox.marvelheroes.character.data
 
 import com.noox.marvelheroes.character.domain.model.Character
 import com.noox.marvelheroes.core.data.Page
+import javax.inject.Inject
 
-class CharacterRepository(
+class CharacterRepository @Inject constructor(
     private val dataSource: CharacterDataSource,
     private val mapper: CharacterMapper
 ) {

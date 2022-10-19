@@ -3,12 +3,14 @@ package com.noox.marvelheroes.character.domain.usecase
 import com.noox.marvelheroes.character.data.CharacterRepository
 import com.noox.marvelheroes.character.domain.model.Character
 import com.noox.marvelheroes.core.data.Page
+import com.noox.marvelheroes.core.di.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class GetPageOfCharacters(
-    private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
+class GetPageOfCharacters @Inject constructor(
+    @IoDispatcher private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
     private val repository: CharacterRepository
 ) {
     suspend operator fun invoke(page: Int = 0): Result<Page<Character>> = withContext(dispatcher) {

@@ -4,12 +4,13 @@ import com.noox.marvelheroes.character.domain.model.Character
 import com.noox.marvelheroes.core.data.ImageMapper
 import com.noox.marvelheroes.core.data.Page
 import com.noox.marvelheroes.core.exception.BadDataException
+import javax.inject.Inject
 import kotlin.math.roundToInt
 
 private const val IMAGE_VARIANT_NAME = "standard_fantastic"
 private const val THUMBNAIL_VARIANT_NAME = "standard_medium"
 
-class CharacterMapper(
+class CharacterMapper @Inject constructor(
     private val imageMapper: ImageMapper
 ) {
 

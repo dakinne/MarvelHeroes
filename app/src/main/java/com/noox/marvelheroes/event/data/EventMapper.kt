@@ -3,10 +3,11 @@ package com.noox.marvelheroes.event.data
 import com.noox.marvelheroes.core.data.ImageMapper
 import com.noox.marvelheroes.core.exception.BadDataException
 import com.noox.marvelheroes.event.domain.model.Event
+import javax.inject.Inject
 
 private const val IMAGE_VARIANT_NAME = "portrait_fantastic"
 
-class EventMapper(
+class EventMapper @Inject constructor(
     private val imageMapper: ImageMapper
 ) {
 
